@@ -9,18 +9,21 @@
 import Foundation
 import UIKit
 
-extension SourceListViewController : UITableViewDataSource {
-   
-    
+extension SourceListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sourceList.count
+        return sources.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifer, for: indexPath) as? SourceTableViewCell
-        cell?.configureCell(indexPath, sourceList[indexPath.row])
-
+        cell?.configureCell(indexPath, sources[indexPath.row])
+        
         return cell!
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller = ArticleListViewController.articleListViewControllerInstanceObject()
+        controller.source = sources[indexPath.row]
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
 }

@@ -9,10 +9,10 @@
 import Foundation
 import ObjectMapper
 
+public final class Source: Mappable, NSCoding {
 
-public final class Sources: Mappable, NSCoding {
-    
     // MARK: Declaration for string constants to be used to decode and also serialize.
+    
     private struct SerializationKeys {
         static let name = "name"
         static let id = "id"
@@ -24,6 +24,7 @@ public final class Sources: Mappable, NSCoding {
     }
     
     // MARK: Properties
+    
     public var name: String?
     public var id: String?
     public var language: String?
@@ -33,11 +34,11 @@ public final class Sources: Mappable, NSCoding {
     public var country: String?
     
     // MARK: ObjectMapper Initializers
+    
     /// Map a JSON object to this class using ObjectMapper.
     ///
     /// - parameter map: A mapping from ObjectMapper.
-    public required init?(map: Map){
-        
+    public required init?(map: Map) {
     }
     
     /// Map a JSON object to this class using ObjectMapper.
@@ -69,14 +70,15 @@ public final class Sources: Mappable, NSCoding {
     }
     
     // MARK: NSCoding Protocol
-    required public init(coder aDecoder: NSCoder) {
-        self.name = aDecoder.decodeObject(forKey: SerializationKeys.name) as? String
-        self.id = aDecoder.decodeObject(forKey: SerializationKeys.id) as? String
-        self.language = aDecoder.decodeObject(forKey: SerializationKeys.language) as? String
-        self.descriptionValue = aDecoder.decodeObject(forKey: SerializationKeys.descriptionValue) as? String
-        self.category = aDecoder.decodeObject(forKey: SerializationKeys.category) as? String
-        self.url = aDecoder.decodeObject(forKey: SerializationKeys.url) as? String
-        self.country = aDecoder.decodeObject(forKey: SerializationKeys.country) as? String
+    
+    public required init(coder aDecoder: NSCoder) {
+        name = aDecoder.decodeObject(forKey: SerializationKeys.name) as? String
+        id = aDecoder.decodeObject(forKey: SerializationKeys.id) as? String
+        language = aDecoder.decodeObject(forKey: SerializationKeys.language) as? String
+        descriptionValue = aDecoder.decodeObject(forKey: SerializationKeys.descriptionValue) as? String
+        category = aDecoder.decodeObject(forKey: SerializationKeys.category) as? String
+        url = aDecoder.decodeObject(forKey: SerializationKeys.url) as? String
+        country = aDecoder.decodeObject(forKey: SerializationKeys.country) as? String
     }
     
     public func encode(with aCoder: NSCoder) {
@@ -88,6 +90,4 @@ public final class Sources: Mappable, NSCoding {
         aCoder.encode(url, forKey: SerializationKeys.url)
         aCoder.encode(country, forKey: SerializationKeys.country)
     }
-    
 }
-

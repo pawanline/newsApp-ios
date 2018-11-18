@@ -9,13 +9,13 @@
 import UIKit
 
 class SourceTableViewCell: UITableViewCell {
-    
+
     // MARK: - IB Outlets
+    
     @IBOutlet var sourceTitleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var cellBackgroundView: UIView!
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -25,14 +25,10 @@ class SourceTableViewCell: UITableViewCell {
         cellBackgroundView.layer.borderWidth = 1
     }
     
-    
     // MARK: - Helper Methods
-    func configureCell(_ indexPath:IndexPath, _ source: Sources) {
+    
+    func configureCell(_ indexPath: IndexPath, _ source: Source) {
         sourceTitleLabel.text = source.name
         descriptionLabel.text = source.descriptionValue
     }
-    
-
-   
-    
 }

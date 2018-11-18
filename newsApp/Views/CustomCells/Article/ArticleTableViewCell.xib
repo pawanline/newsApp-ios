@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="162" id="KGk-i7-Jjw" customClass="ArticleTableViewCell" customModule="newsApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="323" height="162"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="323" height="161.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VbH-QQ-BRd">
+                        <rect key="frame" x="16" y="5" width="291" height="151.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TZF-HB-uSV">
+                                <rect key="frame" x="10" y="10" width="89" height="77"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="77" id="huP-ef-7ei"/>
+                                    <constraint firstAttribute="width" constant="89" id="yhi-NT-h2W"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Cyclone Gaja: Being prepared against extreme events" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50E-cN-o8q">
+                                <rect key="frame" x="107" y="10" width="174" height="56.5"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coastal districts must continue to strengthen resilience against extreme weather events" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjr-Yq-oit">
+                                <rect key="frame" x="107" y="68" width="184" height="45.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="The Hindu | 5 hours Ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9f6-fw-Jsk">
+                                <rect key="frame" x="107" y="126" width="174" height="17"/>
+                                <viewLayoutGuide key="safeArea" id="IDd-vY-oEO"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fFy-UC-ELu" firstAttribute="trailing" secondItem="9f6-fw-Jsk" secondAttribute="trailing" constant="10" id="3l7-Oy-tKC"/>
+                            <constraint firstItem="TZF-HB-uSV" firstAttribute="top" secondItem="fFy-UC-ELu" secondAttribute="top" constant="10" id="7lG-vh-z8C"/>
+                            <constraint firstItem="mjr-Yq-oit" firstAttribute="trailing" secondItem="fFy-UC-ELu" secondAttribute="trailing" id="Ndv-P4-NT6"/>
+                            <constraint firstItem="50E-cN-o8q" firstAttribute="leading" secondItem="TZF-HB-uSV" secondAttribute="trailing" constant="8" id="ViE-Nn-AEB"/>
+                            <constraint firstItem="fFy-UC-ELu" firstAttribute="bottom" secondItem="9f6-fw-Jsk" secondAttribute="bottom" constant="8.5" id="bMw-8S-xKR"/>
+                            <constraint firstItem="fFy-UC-ELu" firstAttribute="trailing" secondItem="50E-cN-o8q" secondAttribute="trailing" constant="10" id="e4W-vK-lDc"/>
+                            <constraint firstItem="TZF-HB-uSV" firstAttribute="leading" secondItem="fFy-UC-ELu" secondAttribute="leading" constant="10" id="kp7-Ea-lmC"/>
+                            <constraint firstItem="mjr-Yq-oit" firstAttribute="top" secondItem="50E-cN-o8q" secondAttribute="bottom" constant="1.5" id="oCh-OP-uqd"/>
+                            <constraint firstItem="50E-cN-o8q" firstAttribute="top" secondItem="fFy-UC-ELu" secondAttribute="top" constant="10" id="pwb-AR-rwN"/>
+                            <constraint firstItem="mjr-Yq-oit" firstAttribute="leading" secondItem="TZF-HB-uSV" secondAttribute="trailing" constant="8" id="qsP-yG-S81"/>
+                            <constraint firstItem="9f6-fw-Jsk" firstAttribute="leading" secondItem="mjr-Yq-oit" secondAttribute="leading" id="rV1-dd-0zw"/>
+                            <constraint firstItem="9f6-fw-Jsk" firstAttribute="top" secondItem="mjr-Yq-oit" secondAttribute="bottom" constant="12.5" id="t7C-3d-zDz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fFy-UC-ELu"/>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="VbH-QQ-BRd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="3nX-TS-BGN"/>
+                    <constraint firstAttribute="bottom" secondItem="VbH-QQ-BRd" secondAttribute="bottom" constant="5" id="Wh7-P3-qml"/>
+                    <constraint firstAttribute="trailing" secondItem="VbH-QQ-BRd" secondAttribute="trailing" constant="16" id="ZyH-5o-U4f"/>
+                    <constraint firstItem="VbH-QQ-BRd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="tSA-Wb-NOv"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="articleDescriptionLabel" destination="mjr-Yq-oit" id="tYh-Zr-0uN"/>
+                <outlet property="articleImageView" destination="TZF-HB-uSV" id="CXb-jl-Xci"/>
+                <outlet property="articleTitleLabel" destination="50E-cN-o8q" id="UYo-v2-QEH"/>
+                <outlet property="authorTimeStampLabel" destination="9f6-fw-Jsk" id="uEf-DB-qaB"/>
+                <outlet property="cellBackgroundView" destination="VbH-QQ-BRd" id="tuY-cN-hLm"/>
+            </connections>
+            <point key="canvasLocation" x="135.19999999999999" y="172.71364317841082"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -9,19 +9,26 @@
 import Foundation
 
 struct Constants {
-    
-    static let API_KEY : String = "571fa23760634feb8040a5b5d9aba6c3"
+    static let API_KEY: String = "571fa23760634feb8040a5b5d9aba6c3"
     
     struct APIServices {
         // Base URL
-        static func apiURL(_ methodName:String) -> String {
+        static func apiURL(_ methodName: String) -> String {
             let BASE_URL = "https://newsapi.org/v2"
             return BASE_URL + "/" + methodName
         }
         
-        
         /* Source */
-        static let  sources = Constants.APIServices.apiURL("sources")
+        static let sources = Constants.APIServices.apiURL("sources")
+        
+        static let article = Constants.APIServices.apiURL("top-headlines")
     }
     
+    // MARK: - Controller Identifier -
+    
+    // View Controller Identifier
+    struct ViewControllerIdentifiers {
+        static let articleListControllerIdentifier: String = "ArticleListViewController"
+        static let loadWebViewControllerIdentifier: String = "LoadWebViewController"
+    }
 }

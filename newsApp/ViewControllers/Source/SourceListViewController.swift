@@ -17,8 +17,10 @@ class SourceListViewController: UIViewController {
     
     // MARK: - Variables
     
-    var sourceList: [Sources] = []
+    var sources: [Source] = []
     let cellIdentifer = "SourceTableViewCell"
+    
+    // MARK: - View Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,20 +41,23 @@ class SourceListViewController: UIViewController {
     
     func fetchSourceList() {
         view.showLoader()
-        HttpClient.sharedInstance.apiRequestCall(method: .get, apiURL: Constants.APIServices.sources) { [weak self] success, json, _ in
+        let apiURLString = Constants.APIServices.sources + "?language=en&country=in&apiKey=" + "\(Constants.API_KEY)"
+        HttpClient.sharedInstance.apiRequestCall(method: .get, apiURL: apiURLString) { [weak self] success, json, _ in
             self?.view.hideLoader()
             if success {
                 if json != nil {
                     if let result = json as? Dictionary<String, AnyObject> {
                         if let result = result["sources"] as? [[String: Any]] {
-                            self?.sourceList = Mapper<Sources>().mapArray(JSONArray: result)
+                            self?.sources = Mapper<Source>().mapArray(JSONArray: result)
                         }
                         self?.tableView.reloadData()
                     }
                     
                 } else {
-                    // handle empty area
+                    // handle empty result
                 }
+            } else {
+                // handle failure
             }
         }
     }
